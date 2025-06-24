@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -27,9 +28,12 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
             .fillMaxSize()
             //.background(color = Color.White)
             .background(
+                //shape = RoundedCornerShape(topEnd = 24.dp),
+               // color = Color.White,
                 brush = Brush.verticalGradient(
-                    colors = listOf(Color(0xFFFF8C42), Color(0xFFFF7A2B))
-                )
+                    colors = listOf(Color(0xFFFF8C42), Color(0xFFFF7A2B)),
+                ),
+
             )
     )
     //column styling ends here
@@ -37,7 +41,10 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
         Column(
             modifier = Modifier
                 .weight(0.65f)
-                .fillMaxWidth(), verticalArrangement = Arrangement.Center,
+                .fillMaxWidth(),
+//                .background(shape = RoundedCornerShape(30.dp),
+//                    color = Color.White),
+            verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
 
         )
@@ -68,7 +75,9 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
         }
         Column(
             modifier = Modifier
-                .background(color = Color.White)
+                .background(color = Color.White,
+                    shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp)
+                )
                 .weight(0.35f)
                 .fillMaxWidth()
                 .padding(horizontal = 24.dp, vertical = 32.dp),
@@ -92,14 +101,15 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
                     color = Color(0xFF272140),
                     textAlign = TextAlign.Center,
 
-                )
+                    )
                 Spacer(modifier = Modifier.height(25.dp))
 
-                Button(onClick = {},modifier=Modifier
-                    .fillMaxWidth()
-                    .height(56.dp),
-                    colors=ButtonDefaults.buttonColors(containerColor =Color(0xFFFF8C42) )
-                    ) {
+                Button(
+                    onClick = {}, modifier = Modifier
+                        .fillMaxWidth()
+                        .height(56.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF8C42))
+                ) {
                     Text(
                         "Tap me with love!!", fontSize = 30.sp,
                         fontWeight = FontWeight.SemiBold,
