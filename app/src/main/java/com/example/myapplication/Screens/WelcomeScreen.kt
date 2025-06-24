@@ -127,8 +127,8 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
 }
 
 
-@Preview
-@Composable
-fun prevWelcome() {
-    WelcomeScreen()
-}
+//@Preview
+//@Composable
+//fun prevWelcome() {
+//    WelcomeScreen()
+//}
