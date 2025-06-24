@@ -4,14 +4,20 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.myapplication.R
 
 @Composable
@@ -31,7 +37,7 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
         Column(
             modifier = Modifier
                 .weight(0.65f)
-                .fillMaxWidth(),verticalArrangement = Arrangement.Center,
+                .fillMaxWidth(), verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
 
         )
@@ -47,7 +53,7 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
                 //Alignment.BottomCenter
 
                 contentAlignment = Alignment.Center
-               // verticalArrangement=
+                // verticalArrangement=
 
             ) {
                 Image(
@@ -60,12 +66,48 @@ fun WelcomeScreen(modifier: Modifier = Modifier) {
 
             }
         }
-        Column (
-            modifier=Modifier.
-                background(color = Color.White)
-            .weight(0.35f).fillMaxWidth()
+        Column(
+            modifier = Modifier
+                .background(color = Color.White)
+                .weight(0.35f)
+                .fillMaxWidth()
+                .padding(horizontal = 24.dp, vertical = 32.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
 
-        ){
+        ) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text(
+                    "Enjoy your fresh Salad",
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = Color(0xFF272140),
+                    textAlign = TextAlign.Center
+                )
+                Spacer(modifier = Modifier.height(20.dp))
+                Text(
+                    "Your Salad will be delivered in 10 min after the order placed",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color(0xFF272140),
+                    textAlign = TextAlign.Center,
+
+                )
+                Spacer(modifier = Modifier.height(25.dp))
+
+                Button(onClick = {},modifier=Modifier
+                    .fillMaxWidth()
+                    .height(56.dp),
+                    colors=ButtonDefaults.buttonColors(containerColor =Color(0xFFFF8C42) )
+                    ) {
+                    Text(
+                        "Tap me with love!!", fontSize = 30.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = Color.White,
+                        textAlign = TextAlign.Center
+                    )
+                }
+            }
 
         }
 
