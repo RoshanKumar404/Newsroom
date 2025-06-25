@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.myapplication.Screens.HomeScreen
 import com.example.myapplication.Screens.SplasScreen
 import com.example.myapplication.Screens.WelcomeScreen
 import com.example.myapplication.ui.theme.MyApplicationTheme
@@ -21,7 +22,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             //SplasScreen()
-            WelcomeScreen()
+           // WelcomeScreen()
+            HomeScreen()
 //            MyApplicationTheme {
 //                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 //                    Greeting(
