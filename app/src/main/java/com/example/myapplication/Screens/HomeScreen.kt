@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -140,8 +141,27 @@ fun HomeScreen(
                 )
             }
 
+
         }
-        LazyRow() {  }
+        LazyRow(
+            horizontalArrangement = Arrangement.spacedBy(17.dp),
+            modifier = Modifier.padding(bottom = 15.dp)
+        ) {
+            items(listOf("Hottest", "Popular", "New Combo", "Top")) { category ->
+                Text(
+                    text = category,
+                    color = Color(0xFF272140),
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Medium,
+                    modifier = Modifier
+                        .background(Color(0xFFF3F1F1), shape = RoundedCornerShape(12.dp))
+                        .padding(horizontal = 16.dp, vertical = 8.dp)
+                )
+            }
+        }
+
+        //Category tab
+
 
 
         //las line of main column
@@ -219,6 +239,11 @@ fun RecomomdationsCard(modifier: Modifier = Modifier, name: String, price: Strin
             //Spacer(modifier = Modifier.height(5.dp))
         }
     }
+}
+
+@Composable
+fun Varieties(modifier: Modifier = Modifier) {
+    
 }
 
 @Preview
