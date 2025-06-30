@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.akhbar.R
@@ -25,14 +26,15 @@ fun NewsButton(text:String,onClick:()->Unit) {
     ) {
         Text(
             text = text,
-            color = Color.White // optional: text color
+            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.SemiBold)
+            //color = Color.White // optional: text color
         )
     }
 
 }
 
-@Preview
-@Composable
-private fun BUttonprev() {
-    NewsButton(text = "Soft Tap") { }
-}
+//@Preview
+//@Composable
+//private fun BUttonprev() {
+//    NewsButton(text = "Soft Tap ") { }
+//}
