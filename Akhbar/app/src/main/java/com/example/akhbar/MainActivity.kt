@@ -24,18 +24,18 @@ import androidx.hilt.navigation.compose.hiltViewModel // You need this import!
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    @Inject
-    lateinit var appEntryuseCases: AppEntryuseCases
+//    @Inject
+//    lateinit var appEntryuseCases: AppEntryuseCases
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
 
-        lifecycleScope.launch {
-            appEntryuseCases.readAppEntry().collect {
-                Log.d("Text", it.toString())
-            }
-        }
+//        lifecycleScope.launch {
+//            appEntryuseCases.readAppEntry().collect {
+//                Log.d("Text", it.toString())
+//            }
+//        }
         setContent {
             Box(modifier = Modifier.background(color = MaterialTheme.colorScheme.background))
             // The problem is likely here:
